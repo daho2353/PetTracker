@@ -7,7 +7,7 @@ window.onload = function() {
     populateBosses();
   }
   
-function populateBosses() {
+  function populateBosses() {
     const petTypeSelector = document.getElementById("pet-type-selector");
     const allPetsDiv = document.getElementById("allPets");
     const bossPetsDiv = document.getElementById("bossPets");
@@ -27,15 +27,23 @@ function populateBosses() {
     petTypeSelector.addEventListener("change", function() {
       const selectedPetType = petTypeSelector.value;
   
-      // Hide all pet divs
-      allPetsDiv.style.display = "none";
-      bossPetsDiv.style.display = "none";
-      skillingPetsDiv.style.display = "none";
-      miscPetsDiv.style.display = "none";
+      // Remove all existing pets from pet divs
+      allPetsDiv.innerHTML = "";
+      bossPetsDiv.innerHTML = "";
+      skillingPetsDiv.innerHTML = "";
+      miscPetsDiv.innerHTML = "";
   
       if (selectedPetType === "allPets") {
         // Show all pets
         allPetsDiv.style.display = "block";
+        allPetsDiv.innerHTML = ""; // clear the content before updating
+        allPets.forEach(name => {
+          const option = document.createElement("a");
+          option.href = "#";
+          option.id = "pet-name";
+          option.textContent = name;
+          allPetsDiv.appendChild(option);
+        });
       } else if (selectedPetType === "bossPets") {
         // Show boss pets
         bossPets.forEach(name => {
@@ -62,15 +70,14 @@ function populateBosses() {
           const option = document.createElement("a");
           option.href = "#";
           option.textContent = name;
-          
+  
           miscPetsDiv.appendChild(option);
         });
         miscPetsDiv.style.display = "block";
       }
     });
   }
-  
-  
+   
 function toggleNav()
 {
     let status = document.getElementById("openbtn");
