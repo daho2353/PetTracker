@@ -53,7 +53,7 @@ body {
   
   #pet-type-label {
     color: white;
-    font-size: 16px;
+    font-size: 24px;
     margin-right: 10px;
   }
 
@@ -120,7 +120,7 @@ body {
   .sidebar a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 24px;
     color: rgb(201, 181, 218);
     display: block;
     transition: 0.3s;

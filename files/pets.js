@@ -7,37 +7,6 @@ window.onload = function() {
     populateBosses();
   }
   
-/*
-function populateBosses()
-{
-   /* bossNames.forEach(name => {
-        const option = document.createElement("a");
-        option.href= "#";
-        option.textContent = name;
-        document.getElementById("bossPets").appendChild(option);
-    });
-    skillPets.forEach(name => {
-        const option = document.createElement("a");
-        option.href= "#";
-        option.textContent = name;
-        document.getElementById("skillingPets").appendChild(option);
-    });
-    miscPets.forEach(name => {
-        const option = document.createElement("a");
-        option.href= "#";
-        option.textContent = name;
-        document.getElementById("miscPets").appendChild(option);
-    });
-    
-    allBosses.forEach(name => {
-        const option = document.createElement("a");
-        option.href= "#";
-        option.textContent = name;
-        document.getElementById("allPets").appendChild(option);
-    })
-}
-*/
-
 function populateBosses() {
     const petTypeSelector = document.getElementById("pet-type-selector");
     const allPetsDiv = document.getElementById("allPets");
@@ -49,6 +18,7 @@ function populateBosses() {
     allPets.forEach(name => {
       const option = document.createElement("a");
       option.href = "#";
+      option.id = "pet-name";
       option.textContent = name;
       allPetsDiv.appendChild(option);
     });
@@ -72,6 +42,7 @@ function populateBosses() {
           const option = document.createElement("a");
           option.href = "#";
           option.textContent = name;
+          option.id = "pet-name";
           bossPetsDiv.appendChild(option);
         });
         bossPetsDiv.style.display = "block";
@@ -81,6 +52,7 @@ function populateBosses() {
           const option = document.createElement("a");
           option.href = "#";
           option.textContent = name;
+          option.id = "pet-name";
           skillingPetsDiv.appendChild(option);
         });
         skillingPetsDiv.style.display = "block";
@@ -90,6 +62,7 @@ function populateBosses() {
           const option = document.createElement("a");
           option.href = "#";
           option.textContent = name;
+          
           miscPetsDiv.appendChild(option);
         });
         miscPetsDiv.style.display = "block";
@@ -114,6 +87,50 @@ function toggleNav()
     }
 }
 
+function filterPets() {
+    const searchInput = document.getElementById("searchbar");
+    const selectedPetType = document.getElementById("pet-type-selector").value;
+    const allPetsDiv = document.getElementById("allPets");
+    const bossPetsDiv = document.getElementById("bossPets");
+    const skillingPetsDiv = document.getElementById("skillingPets");
+    const miscPetsDiv = document.getElementById("miscPets");
+  
+    // hide all divs
+    allPetsDiv.style.display = "none";
+    bossPetsDiv.style.display = "none";
+    skillingPetsDiv.style.display = "none";
+    miscPetsDiv.style.display = "none";
+  
+    // show selected div
+    let selectedDiv;
+    if (selectedPetType === "allPets") {
+      selectedDiv = allPetsDiv;
+    } else if (selectedPetType === "bossPets") {
+      selectedDiv = bossPetsDiv;
+    } else if (selectedPetType === "skillingPets") {
+      selectedDiv = skillingPetsDiv;
+    } else if (selectedPetType === "miscPets") {
+      selectedDiv = miscPetsDiv;
+    }
+  
+    // filter the pets
+    const searchTerm = searchInput.value.toLowerCase();
+    const matchingPets = Array.from(selectedDiv.children).filter(option => {
+      return option.textContent.toLowerCase().includes(searchTerm);
+    });
+  
+    // hide all options and show only matching ones
+    selectedDiv.querySelectorAll("a").forEach(option => {
+      option.style.display = "none";
+    });
+    matchingPets.forEach(option => {
+      option.style.display = "block";
+    });
+  
+    // show the selected div
+    selectedDiv.style.display = "block";
+  }
 
+  
 
 console.log(allPets);

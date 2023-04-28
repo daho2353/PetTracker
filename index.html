@@ -6,11 +6,9 @@
 <script src="files/pets.js"></script>
 </head>
 <body>
-
   <div id="mySidebar" class="sidebar" >
     <h1> OSRS <br> Pet Tracker</h1>
-    <input id="searchbar" type="text" placeholder="Search..">
-    <button id="submitbtn" type="submit">Submit</button>
+    <input id="searchbar" type="text" placeholder="Search.." onkeyup="filterPets()">
     <div id="pet-type-container">
       <label id="pet-type-label" for="pet-type-selector">Pet Type:</label>
       <select id="pet-type-selector" name="pet-type-selector">
