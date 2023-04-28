@@ -11,12 +11,19 @@
     <h1> OSRS <br> Pet Tracker</h1>
     <input id="searchbar" type="text" placeholder="Search..">
     <button id="submitbtn" type="submit">Submit</button>
-    <h2>Boss Pets</h2>
+    <div id="pet-type-container">
+      <label id="pet-type-label" for="pet-type-selector">Pet Type:</label>
+      <select id="pet-type-selector" name="pet-type-selector">
+        <option value="allpets"> All Pets</option>
+        <option value="bosspets">Boss Pets</option>
+        <option value="skillingpets">Skilling Pets</option>
+        <option value="miscpets">Misc. Pets</option>
+      </select>
+    </div>
     <div id="bossPets"></div>
-    <h2>Skilling Pets</h2>
     <div id="skillingPets"></div>
-    <h2>Misc. Pets</h2>
     <div id="miscPets"></div>
+    <div id="allPets"></div>
   </div>
   
   <div id="main">
@@ -39,8 +46,12 @@
         <p id="hours-spent"> Hours Spent: 0 </p> <p id="hours-left"> Hours Left: ?</p>
       </div>
     </div>
-    <p id="likelihood"> Likelihood: 0% </p>
-    <input type="checkbox" id="petcheck" unchecked> <label for="petcheck"> Pet obtained?</label>
+    <div id="likelihood-container">'
+      <p id="likelihood"> Likelihood: 0% </p>
+    </div>
+    <div id="pet-obtained-container">
+      <input type="checkbox" id="petcheck" unchecked> <label for="petcheck"> Pet obtained?</label>
+    </div>
   </div>
   
   

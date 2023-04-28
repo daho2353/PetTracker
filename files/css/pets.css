@@ -37,13 +37,43 @@ body {
     margin-left: 18px; 
   }
 
+  #pet-type-container {
+    display: flex;
+    align-items: center;
+    margin-left: 16px;
+    margin-right: auto;
+    margin-top: 8px;
+  }
+  
+  #pet-type-selector {
+    margin-left: 10px;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  #pet-type-label {
+    color: white;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+
+  #pet-obtained-container{
+    display:block;
+    margin-left: 400px;
+    margin-right: auto;
+  }
+
+  #likelihood-container{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left:140px;
+  }
+
   #likelihood{
     font-size: 80px;
     color: white;
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 200px;
   }
+
   #hours-left{
     color:white;
     font-size: 32px;
@@ -215,6 +245,12 @@ body {
       margin-left: 200px;
       margin-right: 150px;
       justify-content: center;
+    }
+    
+    #likelihood-container{
+      display: inline-block;
+      vertical-align: middle;
+      margin-left:100px;
     }
   }
   
