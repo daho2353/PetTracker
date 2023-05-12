@@ -9,7 +9,7 @@ const bossInformation = {
     "imageName": "chaosele.png",
     "dropRate": "1/300",
    },
-  "Dagannoth Kings":{
+  "Dagannoth Kings":{ // add a case to displayBosses
     "Dagannoth Supreme": 
     {
       "imageName": "dagsupreme.png",
@@ -66,7 +66,7 @@ const bossInformation = {
     "imageName": "kq.png",
     "dropRate": "1/3000",
    },
-  "Thermonuclear Smoke Devil": 
+  "Thermonuclear Smoke Devil": //add a case to DisplayBosses() for alt
   {
     "imageName": "thermy.png",
     "dropRate": "1/3000",
@@ -76,12 +76,12 @@ const bossInformation = {
     "imageName": "kraken.png",
     "dropRate": "1/3000",
    },
-  "Corporeal Beast": 
+  "Corporeal Beast":  //add a case to DisplayBosses() for alt
   {
     "imageName": "corp.png",
     "dropRate": "1/5000",
    },
-  "Zulrah": 
+  "Zulrah":   //add a case to DisplayBosses() for alt
   {
     "imageName": "snakeling.png",
     "dropRate": "1/4000",
@@ -91,15 +91,15 @@ const bossInformation = {
     "imageName": "chompy.png",
     "dropRate": "1/500",
    },
-  "Venenatis": 
+  "Venenatis":  //add a case to DisplayBosses() for alt and drop rates
   {
     "imageName": "venenatisnew.png", //need to make a special case for the wildy bosses since multi and singles have different drop rates
    },
-  "Callisto": 
+  "Callisto":  //add a case to DisplayBosses() for alt and drop rates
   {
     "imageName": "callistonew.png",
    },
-  "Vet'ion": 
+  "Vet'ion":  //add a case to DisplayBosses() for alt and drop rates
   {
     "imageName": "vetionpurplenew.png",
    },
@@ -108,7 +108,7 @@ const bossInformation = {
     "imageName": "scorpia.png",
     "dropRate": "1/2000",
    },
-  "Jad":
+  "Jad": //add a case to DisplayBosses() for alt and drop rates
   {
     "imageName": "jadregular.png", //add case for on task kills, off task kills, and cape gambles
    },
@@ -122,11 +122,11 @@ const bossInformation = {
     "imageName": "sire.png",
     "dropRate": "1/2560", //also add a case for how many unsireds to get pet
    },
-  "Fishing": 
+  "Fishing": //add a case to DisplayBosses() for alt
   {
     "imageName": "fishingwhite.png",
    },
-  "Mining":
+  "Mining": //add a case to DisplayBosses() for alt
   {
     "imageName": "miningdefault.png",
    },
@@ -134,7 +134,7 @@ const bossInformation = {
   {
     "imageName": "wc.png",
    },
-  "Hunter":{
+  "Hunter":{ //add a case to DisplayBosses() for proper display
     "Chinchompa": 
     {
       "imageName": "chinblack.png",
@@ -150,28 +150,28 @@ const bossInformation = {
     "imageName": "bloodhound.png",
     "dropRate": "1/1000",
    },
-  "Agility": 
+  "Agility": //add a case to DisplayBosses() for alt
   {
     "imageName": "agilityregular.png",
    },
-  "Farming": 
+  "Farming": //add a case to DisplayBosses() for alt
   {
     "imageName": "farmingdefault.png",
    },
-  "Runecraft": 
+  "Runecraft": //add a case to DisplayBosses() for alt
   {
     "imageName": "runecraftdefault.png",
    },
-  "Thieving": 
+  "Thieving": //add a case to DisplayBosses() for alt
   {
     "imageName": "rockydefault.png",
    },
-  "Wintertodt": 
+  "Wintertodt": //add a case to DisplayBosses() for alt
   {
     "imageName": "phoenixred.png",
     "dropRate": "1/5000",
    },
-  "Chambers of Xeric": 
+  "Chambers of Xeric": //add a case to DisplayBosses() for alt
   {
     "imageName": "raids1olm.png",
     "dropRate": "1/1576", // also add a case for number of purples obtained without pet
@@ -181,12 +181,12 @@ const bossInformation = {
     "imageName": "skotos.png",
     "dropRate": "1/65",
    },
-  "Zuk": 
+  "Zuk": //add a case to DisplayBosses() for alt
   {
     "imageName": "zuk.png",
     "dropRate": "1/43", // add case for on task kill and cape gambles
    },
-  "Grotesque Guardians": 
+  "Grotesque Guardians": //add a case to DisplayBosses() for alt
   {
     "imageName": "noon.png",
     "dropRate": "1/3000",
@@ -196,22 +196,22 @@ const bossInformation = {
     "imageName": "vorkath.png",
     "dropRate": "1/3000",
    },
-  "Theater of Blood": 
+  "Theater of Blood": //add a case to DisplayBosses() for alt
   {
     "imageName": "raids2verzik.png",
     "dropRate": "1/650",
    },
-  "Alchemical Hydra":
+  "Alchemical Hydra": //add a case to DisplayBosses() for alt
   {
     "imageName": "hydragreen.png",
     "dropRate": "1/3000",
    },
-  "Sarachnis":
+  "Sarachnis": //add a case to DisplayBosses() for alt
   {
     "imageName": "srarachadefault.png",
     "dropRate": "1/3000",
    },
-  "Gauntlet": 
+  "Gauntlet": //add a case to DisplayBosses() for alt
   {
     "imageName": "gauntletblue.png", // add case for gauntlet and corrupted
    },
@@ -220,11 +220,11 @@ const bossInformation = {
     "imageName": "zalcano.png",
     "dropRate": "1/2250",
    },
-  "Nightmare": 
+  "Nightmare": //add a case to DisplayBosses() for alt
   {
     "imageName": "nightmaredefault.png", // add case for normal and phosani
    },
-  "Soul Wars": 
+  "Soul Wars": //add a case to DisplayBosses() for alt
   {
     "imageName":  "soulwarscreator.png",
     "dropRate": "1/400",
@@ -244,12 +244,12 @@ const bossInformation = {
     "imageName":  "gotr.png",
     "dropRate": "1/4000",
    },
-  "Tombs of Amascut": 
+  "Tombs of Amascut": //add a case to DisplayBosses() for alt
   {
     "imageName":  "raids3tumeken.png",
     "dropRate": "1/2000", //maybe add a slider for average invocation and calculate a more accurate drop rate based on that
    },
-  "Muspah":
+  "Muspah": //add a case to DisplayBosses() for alt
   {
     "imageName":  "muphinrange.png",
     "dropRate": "1/2500",
@@ -398,8 +398,19 @@ function filterPets() {
   }
 
 
-  function displayBoss(boss)
+  function displayBoss(boss) //create a switch statement which sets the proper image and drop rate, most can be covered by a default case but some bosses like wilderness and sire have special calculations. 
   {
+    let hasAlt = false; //use this in the switch case for each boss if it has an alt skin set it to true, at the end of the function check if this is true and call a function to add buttons for each alternative skin based on the boss. 
     let currentBossImage = document.getElementById("petimage");
-    currentBossImage.src = "files/img/" + bossInformation[boss].imageName;
+    let currentBossDropRate = document.getElementById("droprate");
+    switch(boss){
+      //case "Dagganoth Kings":
+      //case "Zulrah":
+      //  hasAlt = True;
+      //break;
+      default:
+        currentBossImage.src = "files/img/" + bossInformation[boss].imageName;
+        currentBossDropRate.innerHTML = bossInformation[boss].dropRate;
+    }
+
   }
