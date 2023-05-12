@@ -2,69 +2,6 @@ const bossPets = ["Abyssal Sire", "Alchemical Hydra", "Callisto", "Cerberus", "C
 const skillPets = ["Hunter", "Woodcutting", "Agility", "Fishing", "Runecraft", "Mining", "Thieving", "Farming"];
 const miscPets = ["Bloodhound", "Chompy chick", "Soul Wars", "Barbarian Assault", "Gotr"];
 const allPets = bossPets.concat(skillPets, miscPets).sort();
-const images = { //this object will eventually need to be replaced/reworked once this site is moved to a live server
-  "Hydra": "hydragreen.png",
-  "Chaos Elemental": "chaosele.png",
-  "Dagannoth Supreme": "dagsupreme.png",
-  "Dagannoth Prime": "dagprime.png",
-  "Dagannoth Rex": "dagrex.png",
-  "Penance Queen": "penance.png",
-  "Kree'arra": "kree.png",
-  "General Graardor": "bandos.png",
-  "K'ril Tsutsaroth": "kril.png",
-  "Giant Mole": "mole.png",
-  "King Black Dragon": "kbd.png",
-  "Kalphite Queen": "kq.png",
-  "Thermonuclear Smoke Devil": "thermy.png",
-  "Kraken": "kraken.png",
-  "Corporeal Beast": "corp.png",
-  "Zulrah": "snakeling.png",
-  "Chompy Chick": "chompy.png",
-  "Venenatis": "venenatisnew.png",
-  "Callisto": "callistonew.png",
-  "Vet'ion": "vetionpurplenew.png",
-  "Scorpia": "scorpia.png",
-  "Jad": "jadregular.png",
-  "Cerberus": "cerb.png",
-  "Abyssal Sire": "sire.png",
-  "Heron": "fishingwhite.png",
-  "Rock Golem": "miningdefault.png",
-  "Beaver": "wc.png",
-  "Chinchompa": "chinblack.png",
-  "Bloodhound": "bloodhound.png",
-  "Squirrel": "agilityregular.png",
-  "Tangleroot": "farming.png",
-  "Rift guardian": "runecraftdefault.png",
-  "Rocky": "rockydefault.png",
-  "Phoenix": "phoenixred.png",
-  "Chambers of Xeric": "raids1olm.png",
-  "Skotizo": "skotos.png",
-  "Inferno": "zuk.png",
-  "Herbiboar": "herbi.png",
-  "Grotesque Guardians": "noon.png",
-  "Vorkath": "vorkath.png",
-  "Theatre of Blood": "raids2verzik.png",
-  "Sraracha": "srarachadefault.png",
-  "Gauntlet": "gauntletblue.png",
-  "Zalcano": "zalcano.png",
-  "Nightmare": "nightmaredefault.png",
-  "Soul Wars": "soulwarscreator.png",
-  "Tempoross": "tempoross.png",
-  "Nex": "nex.png",
-  "Gotr": "gotr.png",
-  "Tombs of Amascut": "raids3tumeken.png",
-  "Muspah": "muphinrange.png"
-};
-
-function createImage(array, imageNames, keyName) {
-  const obj = {};
-  for (let i = 0; i < array.length; i++) {
-    obj[array[i]] = imageNames[i];
-  }
-  return obj;
-}
-
-
 
 
 window.onload = function() {
@@ -202,15 +139,4 @@ function filterPets() {
     selectedDiv.style.display = "block";
   }
 
-  function selectBoss() {
-    const petNames = document.querySelectorAll("#pet-name");
-    petNames.forEach(petName => {
-      petName.addEventListener("click", function() {
-        console.log(images[petName.textContent.trim()]);
-        const bossesobject = createImage(allPets, images, petName);
-        console.log(bossesobject);
-        console.log("help");
-      });
-    });
-  }
   
