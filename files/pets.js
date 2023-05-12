@@ -1,12 +1,265 @@
-const bossPets = ["Abyssal Sire", "Alchemical Hydra", "Callisto", "Cerberus", "Chambers of Xeric", "Chaos Elemental", "Commander Zilyana", "Corporeal Beast", "Dagannoth Prime", "Dagannoth Rex", "Dagannoth Supreme", "General Graardor", "Giant Mole", "Grotesque Guardians", "Kalphite Queen", "King Black Dragon", "Kraken", "Kree'Arra", "K'ril Tsutsaroth", "Nightmare", "Sarachnis", "Scorpia", "Skotizo", "Tempoross", "The Gauntlet", "Theatre of Blood", "Thermonuclear Smoke Devil", "TzKal-Zuk", "TzTok-Jad", "Venenatis", "Vet'ion", "Vorkath", "Wintertodt", "Zalcano", "Zulrah"];
+const bossPets = ["Abyssal Sire", "Alchemical Hydra", "Callisto", "Cerberus", "Chambers of Xeric", "Chaos Elemental", "Commander Zilyana", "Corporeal Beast", "Dagannoth Kings", "Gauntlet", "General Graardor", "Giant Mole", "Grotesque Guardians", "Kalphite Queen", "King Black Dragon", "Kraken", "Kree'Arra", "K'ril Tsutsaroth", "Muspah", "Nex", "Nightmare", "Sarachnis", "Scorpia", "Skotizo", "Tempoross",  "Theater of Blood", "Thermonuclear Smoke Devil", "Tombs of Amascut", "Zuk", "Jad", "Venenatis", "Vet'ion", "Vorkath", "Wintertodt", "Zalcano", "Zulrah"];
 const skillPets = ["Hunter", "Woodcutting", "Agility", "Fishing", "Runecraft", "Mining", "Thieving", "Farming"];
-const miscPets = ["Bloodhound", "Chompy chick", "Soul Wars", "Barbarian Assault", "Gotr"];
+const miscPets = ["Bloodhound", "Chompy Chick", "Soul Wars", "Penance Queen", "Gotr"];
 const allPets = bossPets.concat(skillPets, miscPets).sort();
-
+let currentBoss = "Alchemical Hydra";
+const bossInformation = {
+  "Chaos Elemental":
+   {
+    "imageName": "chaosele.png",
+    "dropRate": "1/300",
+   },
+  "Dagannoth Kings":{
+    "Dagannoth Supreme": 
+    {
+      "imageName": "dagsupreme.png",
+      "dropRate": "1/5000",
+     },
+    "Dagannoth Prime": 
+    {
+      "imageName": "dagprime.png",
+      "dropRate": "1/5000",
+     },
+    "Dagannoth Rex": 
+    {
+      "imageName": "dagrex.png",
+      "dropRate": "1/5000",
+     },
+  },
+  "Penance Queen": 
+  {
+    "imageName": "penance.png",
+    "dropRate": "1/1000",
+   },
+  "Kree'Arra": 
+  {
+    "imageName": "kree.png",
+    "dropRate": "1/5000",
+   },
+  "General Graardor": 
+  {
+    "imageName": "bandos.png",
+    "dropRate": "1/5000",
+   },
+  "Commander Zilyana": 
+  {
+    "imageName": "zilyana.png",
+    "dropRate": "1/5000",
+   },
+  "K'ril Tsutsaroth":
+  {
+    "imageName": "kril.png",
+    "dropRate": "1/5000",
+   },
+  "Giant Mole": 
+  {
+    "imageName": "mole.png",
+    "dropRate": "1/3000",
+   },
+  "King Black Dragon": 
+  {
+    "imageName": "kbd.png",
+    "dropRate": "1/3000",
+   },
+  "Kalphite Queen": 
+  {
+    "imageName": "kq.png",
+    "dropRate": "1/3000",
+   },
+  "Thermonuclear Smoke Devil": 
+  {
+    "imageName": "thermy.png",
+    "dropRate": "1/3000",
+   },
+  "Kraken": 
+  {
+    "imageName": "kraken.png",
+    "dropRate": "1/3000",
+   },
+  "Corporeal Beast": 
+  {
+    "imageName": "corp.png",
+    "dropRate": "1/5000",
+   },
+  "Zulrah": 
+  {
+    "imageName": "snakeling.png",
+    "dropRate": "1/4000",
+   },
+  "Chompy Chick": 
+  {
+    "imageName": "chompy.png",
+    "dropRate": "1/500",
+   },
+  "Venenatis": 
+  {
+    "imageName": "venenatisnew.png", //need to make a special case for the wildy bosses since multi and singles have different drop rates
+   },
+  "Callisto": 
+  {
+    "imageName": "callistonew.png",
+   },
+  "Vet'ion": 
+  {
+    "imageName": "vetionpurplenew.png",
+   },
+  "Scorpia": 
+  {
+    "imageName": "scorpia.png",
+    "dropRate": "1/2000",
+   },
+  "Jad":
+  {
+    "imageName": "jadregular.png", //add case for on task kills, off task kills, and cape gambles
+   },
+  "Cerberus": 
+  {
+    "imageName": "cerb.png",
+    "dropRate": "1/3000",
+   },
+  "Abyssal Sire": 
+  {
+    "imageName": "sire.png",
+    "dropRate": "1/2560", //also add a case for how many unsireds to get pet
+   },
+  "Fishing": 
+  {
+    "imageName": "fishingwhite.png",
+   },
+  "Mining":
+  {
+    "imageName": "miningdefault.png",
+   },
+  "Woodcutting": 
+  {
+    "imageName": "wc.png",
+   },
+  "Hunter":{
+    "Chinchompa": 
+    {
+      "imageName": "chinblack.png",
+     },
+    "Herbiboar": 
+    {
+      "imageName": "herbi.png",
+      "dropRate": "1/6500", //add a calculation for xp -> kc 
+     },
+  },
+  "Bloodhound": 
+  {
+    "imageName": "bloodhound.png",
+    "dropRate": "1/1000",
+   },
+  "Agility": 
+  {
+    "imageName": "agilityregular.png",
+   },
+  "Farming": 
+  {
+    "imageName": "farmingdefault.png",
+   },
+  "Runecraft": 
+  {
+    "imageName": "runecraftdefault.png",
+   },
+  "Thieving": 
+  {
+    "imageName": "rockydefault.png",
+   },
+  "Wintertodt": 
+  {
+    "imageName": "phoenixred.png",
+    "dropRate": "1/5000",
+   },
+  "Chambers of Xeric": 
+  {
+    "imageName": "raids1olm.png",
+    "dropRate": "1/1576", // also add a case for number of purples obtained without pet
+   },
+  "Skotizo": 
+  {
+    "imageName": "skotos.png",
+    "dropRate": "1/65",
+   },
+  "Zuk": 
+  {
+    "imageName": "zuk.png",
+    "dropRate": "1/43", // add case for on task kill and cape gambles
+   },
+  "Grotesque Guardians": 
+  {
+    "imageName": "noon.png",
+    "dropRate": "1/3000",
+   },
+  "Vorkath": 
+  {
+    "imageName": "vorkath.png",
+    "dropRate": "1/3000",
+   },
+  "Theater of Blood": 
+  {
+    "imageName": "raids2verzik.png",
+    "dropRate": "1/650",
+   },
+  "Alchemical Hydra":
+  {
+    "imageName": "hydragreen.png",
+    "dropRate": "1/3000",
+   },
+  "Sarachnis":
+  {
+    "imageName": "srarachadefault.png",
+    "dropRate": "1/3000",
+   },
+  "Gauntlet": 
+  {
+    "imageName": "gauntletblue.png", // add case for gauntlet and corrupted
+   },
+  "Zalcano": 
+  {
+    "imageName": "zalcano.png",
+    "dropRate": "1/2250",
+   },
+  "Nightmare": 
+  {
+    "imageName": "nightmaredefault.png", // add case for normal and phosani
+   },
+  "Soul Wars": 
+  {
+    "imageName":  "soulwarscreator.png",
+    "dropRate": "1/400",
+   },
+  "Tempoross": 
+  {
+    "imageName": "tempoross.png",
+    "dropRate": "1/8000",
+   },
+  "Nex": 
+  {
+    "imageName":  "nex.png",
+    "dropRate": "1/500",
+   },
+  "Gotr": 
+  {
+    "imageName":  "gotr.png",
+    "dropRate": "1/4000",
+   },
+  "Tombs of Amascut": 
+  {
+    "imageName":  "raids3tumeken.png",
+    "dropRate": "1/2000", //maybe add a slider for average invocation and calculate a more accurate drop rate based on that
+   },
+  "Muspah":
+  {
+    "imageName":  "muphinrange.png",
+    "dropRate": "1/2500",
+   },
+};
 
 window.onload = function() {
     populateBosses();
-  }
+    displayBoss(currentBoss);
+}
   
   function populateBosses() { //This function is used to populate the bosses within the sidebar
     const petTypeSelector = document.getElementById("pet-type-selector");
@@ -22,6 +275,11 @@ window.onload = function() {
       option.id = "pet-name";
       option.textContent = name;
       allPetsDiv.appendChild(option);
+      option.addEventListener('click',function(event){ //calls the displayBoss function on click which takes the option selected by the user and uses the object bossInformation to fill out information on the web page.
+        event.preventDefault();
+        currentBoss = option.textContent;
+        displayBoss(option.textContent);
+      });
     });
   
     // Update pet list based on pet type selection
@@ -139,4 +397,9 @@ function filterPets() {
     selectedDiv.style.display = "block";
   }
 
-  
+
+  function displayBoss(boss)
+  {
+    let currentBossImage = document.getElementById("petimage");
+    currentBossImage.src = "files/img/" + bossInformation[boss].imageName;
+  }
