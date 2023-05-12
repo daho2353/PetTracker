@@ -1,0 +1,14 @@
+Chaos Elemental - chaosele.png
+Dagannoth Supreme - dagsupreme.png
+Dagannoth Prime - dagprime.png
+Dagannoth Rex - dagrex.png
+Penance Queen - penance.png
+Kree'arra - kree.png
+General Graardor - bandos.png
+K'ril Tsutsaroth - kril.png
+Giant Mole - mole.png
+King Black Dragon - kbd.png
+Kalphite Queen - kq.png
+Thermonuclear Smoke Devel - thermy.png
+Kraken - kraken.png
+Corporeal Beast - corp.png
